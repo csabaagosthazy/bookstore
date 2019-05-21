@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Book {
 	
@@ -18,7 +20,9 @@ public class Book {
 	private String year;
 	private String isbn;
 	private String price;
+	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "catId")
 	private Cathegory cathegory;
 	
