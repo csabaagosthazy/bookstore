@@ -28,6 +28,13 @@ public class BookController {
 	@Autowired
 	private CathegoryRepository CathegoryRepository;
 	
+	
+	//Login
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "login";
+	}
 	// Show all books
 	@RequestMapping("/index")
 	public String Book(Model model) {
