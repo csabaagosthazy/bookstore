@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		webSec
 			.authorizeRequests()
 			.antMatchers("/signup", "/saveuser").permitAll()
-			.antMatchers("/index").hasAuthority("USER")
+			.antMatchers("/index").hasAnyAuthority("USER","ADMIN")
 			.antMatchers("/**").hasAuthority("ADMIN")
 			.and().csrf().ignoringAntMatchers("/db/**")
 			.and().headers().frameOptions().sameOrigin()
@@ -39,6 +39,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.logout()
 			.permitAll();
 	}
+	
+	
 	
 	
     @Autowired
