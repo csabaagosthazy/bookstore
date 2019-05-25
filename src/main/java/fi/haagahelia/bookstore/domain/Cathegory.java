@@ -19,9 +19,8 @@ public class Cathegory {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cathegory")
 	private List<Book> books;
 	
-	public Cathegory(Long id, String name, List<Book> books) {
+	public Cathegory(String name, List<Book> books) {
 		super();
-		this.catId = id;
 		this.name = name;
 		this.books = books;
 	}
